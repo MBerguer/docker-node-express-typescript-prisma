@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:11.4
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  app:
+    build: .
+    volumes:
+      - "./:/app"
+    ports: 
+      - '${PORT}:${PORT}'
+    links:
+      - db
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_USERNAME: ${SMTP_USERNAME}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
+      EMAIL_FROM: ${EMAIL_FROM}
+volumes:
+  db:
+
+    

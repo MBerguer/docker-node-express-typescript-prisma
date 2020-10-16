@@ -1,0 +1,16 @@
+// Type definitions for xss-clean 0.1.1
+// Project: https://github.com/jsonmaur/xss-clean
+// Definitions by: Heorhi Yeudakimenka <https://github.com/kwintik>
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+declare module 'xss-clean' {
+    import express = require('express');
+
+    function xssClean(): (
+        req: express.Request,
+        res: express.Response,
+        next: express.NextFunction
+    ) => void;
+
+    export = xssClean;
+}

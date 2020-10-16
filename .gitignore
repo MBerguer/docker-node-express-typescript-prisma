@@ -1,0 +1,8 @@
+.env
+node_modules
+generated
+prisma.yml
+prisma/.env
+prisma/migrations
+prisma/old_migrations
+logs/
