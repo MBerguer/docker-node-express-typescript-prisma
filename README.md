@@ -1,10 +1,8 @@
-# Speeddial - Dating (REST-API :: docker prisma postgres)
+REST-API :: docker with Prisma + typescript + Postgres
 
 
 ## Customizations made
-
-- Entities generated based on the document
-- See schema.migrations for more details`
+Included everything and this is ready.
 
 
 ### .env
